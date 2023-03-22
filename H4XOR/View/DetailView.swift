@@ -9,24 +9,14 @@ import SwiftUI
 import WebKit
 
 struct DetailView: View {
-    
     let url: String?
-    
     var body: some View {
         WebView(urlString: url)
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(url: "https://www.google.com")
-    }
-}
-
 struct WebView: UIViewRepresentable {
-    
     var urlString: String?
-    
     func makeUIView(context: Context) -> WebView.UIViewType {
         return WKWebView()
     }
@@ -39,5 +29,10 @@ struct WebView: UIViewRepresentable {
             }
         }
     }
-    
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView(url: "https://www.apple.com")
+    }
 }
