@@ -22,6 +22,10 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("H4X0R NEWS")
+            .navigationBarTitleDisplayMode(.inline)
+            .refreshable {
+                networkManager.fetchData()
+            }
         }
         .onAppear() {
             networkManager.fetchData()
